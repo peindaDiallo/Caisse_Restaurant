@@ -1,0 +1,36 @@
+<?php
+
+return [
+
+    'user' => 'Users',
+    'name' => "Name",
+    'email' => "E-mail",
+    'list'=> 'Users List',
+    'user_details' => "user details",
+    'createUser' => "Create User",
+    'edit_user' => "Edit user",
+    'create' => "Create",
+    'edit' => "Change",
+    'update' => "Update",
+    'delete' => "Delete",
+    'cancel' => "Cancel",
+    'view' => "Visualization",
+    'action' => "Action",
+    'password' => "Password",
+    'confirm_password' => "Confirm password",
+    'users' => "Users",
+    'roles' => "Roles",
+    'update_user' => "Update user",
+    'password_incorrect_message' => "Please check that the old password entered is correct",
+    'password_changed_message' => "password changed successfully",
+    'delete_confirm_message' => "Are you sure you want to delete this record?",
+    'delete_message' => "User successfully deleted",
+    'create_message' => "User created successfully",
+    'update_message' => "User updated successfully",
+    'old_passwords' => "old password",
+    'new_passwords' => "New password",
+    'update_other' => "Update other information",
+    'update_password' => "Update my password",
+    'authorization' => "Authorization",
+
+];
