@@ -18,12 +18,13 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('description')->nullable();
             $table->string('price')->nullable();
-            $table->unsignedBigInteger('id_category')->nullable();
-            $table->foreign('id_category')->references('id')->on('categories')->onDelete('cascade');
+            $table->unsignedBigInteger('category')->nullable();
+            $table->foreign('category')->references('id')->on('categories')->onDelete('cascade');
 
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

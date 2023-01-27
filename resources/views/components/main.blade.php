@@ -43,5 +43,47 @@
 
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
 
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var table = $('[data-table]').DataTable({
+                "columns": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    { "orderable": false }
+                ]
+            });
+
+            /* $('.form-control-search').keyup(function(){
+              table.search($(this).val()).draw() ;
+            }); */
+        });
+    </script>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+
+            window.addEventListener('load', function() {
+                var form = document.getElementById('needs-validation');
+                if(form !== null) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                }
+            }, false);
+        })();
+    </script>
+
 </body>
 </html>

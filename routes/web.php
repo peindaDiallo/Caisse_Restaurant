@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\configuration\PermissionController;
 use App\Http\Controllers\Configuration\RoleController;
 use App\Http\Controllers\Configuration\UserController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SaleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,11 +28,20 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/', function () {return view('home');})->middleware(['auth', 'verified'])->name('home');;
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource('/categories', CategoryController::class);
+    Route::resource('/products', ProductController::class);
+    Route::resource('/sales', SaleController::class);
+
+
+
+
 });
 
 Route::middleware(['auth', 'role:Admin'])->name('admin.')->prefix('admin')->group(callback: function () {

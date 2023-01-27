@@ -31,7 +31,7 @@
 
             <ul class="sidebar-sub-nav collapse" id="example">
                 <li class="sidebar-nav-item">
-                    <a href="./layouts/charts_chartjs.html" class="sidebar-nav-link">
+                    <a href="{{route('products.index')}}" :active="request()->routeIs('products.index)" class="sidebar-nav-link">
                   <span class="sidebar-nav-abbr">
                     Product
                   </span>
@@ -39,7 +39,7 @@
                 </li>
 
                 <li class="sidebar-nav-item">
-                    <a href="./layouts/charts_morris.html" class="sidebar-nav-link">
+                    <a href="{{route('categories.index')}}" :active="request()->routeIs('categories.index)" class="sidebar-nav-link">
                         <span class="sidebar-nav-name">
                     Category
                   </span>
@@ -47,7 +47,7 @@
                 </li>
 
                 <li class="sidebar-nav-item">
-                    <a href="./layouts/charts_morris.html" class="sidebar-nav-link">
+                    <a href="{{route('sales.index')}}" :active="request()->routeIs('sales.index)" class="sidebar-nav-link">
                         <span class="sidebar-nav-name">
                   Sales
                   </span>

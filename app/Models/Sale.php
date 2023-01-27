@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Sale extends Model
 {
     use HasFactory;
+
     protected $table = "sales";
 
-    protected $guarded= ['id'];
+    protected $guarded = ['id'];
 
-    public function products():HasMany{
-
-        return $this->hasMany(Product::class);
+    public function product(): BelongsTo
+    {
+        return $this->belongsTo(Product::class, 'product');
     }
 }

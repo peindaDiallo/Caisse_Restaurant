@@ -18,8 +18,6 @@ class SaleFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'name' => fake()->price(),
-            'name' => fake()->name(),
 
         ];
     }

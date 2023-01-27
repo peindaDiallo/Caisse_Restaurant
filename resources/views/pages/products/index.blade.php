@@ -12,18 +12,18 @@
                         <li class="breadcrumb-item active  aria-current="page">Regular Tables</li>
                     </ol>
                 </nav>
+
                 <div class="pb-3">
                     <h1>Data Tables</h1>
-                    <div class="col-12 d-flex justify-content-between">
-                        <h5 class="card-title text-primary">{{ __('category.categ_list') }}</h5>
-                        <a href="{{ route('categories.create')}}" class="btn btn-success"><i class='bx bx-plus'></i>{{ __('sale.creare') }}</a>
-                    </div>
                 </div>
-
                 <div class="row">
                     <div class="col">
                         <div class="card mb-grid">
                             <div class="table-responsive-md">
+                                <div class="col-12 d-flex justify-content-between">
+                                    <h5 class="card-title text-primary">{{ __('catego.catego_list') }}</h5>
+                                    <a href="{{ route('products.create')}}" class="btn btn-success"><i class='bx bx-plus'></i>{{ __('catego.creare') }}</a>
+                                </div>
                                 <table class="table table-actions table-striped table-hover mb-0" data-table>
                                     <thead>
                                     <tr>
@@ -32,30 +32,33 @@
                                                 <input type="checkbox" class="custom-control-input table-select-all">
                                                 <span class="custom-control-indicator"></span>
                                             </label>
-                                                <input type="checkbox" class="custom-control-input table-select-all">
-                                                <span class="custom-control-indicator"></span>
-                                            </label>
                                         </th>
                                         <th scope="col">Name</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Price</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($categories as $categorie)
+                                    @foreach ($products as $product)
                                         <tr>
                                             <th scope="row">
-                                            <label class="custom-control custom-checkbox m-0 p-0">
-                                                <input type="checkbox" class="custom-control-input table-select-row">
-                                                <span class="custom-control-indicator"></span>
-                                            </label>
-                                        </th>
-                                        <td>{{$categorie->name}}</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-secondary">Show</button>
-                                            <button class="btn btn-sm btn-primary">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
+                                                <label class="custom-control custom-checkbox m-0 p-0">
+                                                    <input type="checkbox" class="custom-control-input table-select-row">
+                                                    <span class="custom-control-indicator"></span>
+                                                </label>
+                                            </th>
+                                            <td>{{$product->name}}</td>
+                                            <td>{{$product->description}}</td>
+                                            <td>{{$product->image}}</td>
+                                            <td>{{$product->price}}</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-secondary">Show</button>
+                                                <button class="btn btn-sm btn-primary">Edit</button>
+                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                            </td>
+                                        </tr>
                                     @endforeach
                                     </tbody>
                                 </table>

@@ -19,12 +19,13 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->string('price')->nullable();
 
-            $table->unsignedBigInteger('id_products')->nullable();
-            $table->foreign('id_products')->references('id')->on('products')->onDelete('cascade');
+            $table->unsignedBigInteger('product')->nullable();
+            $table->foreign('product')->references('id')->on('products')->onDelete('cascade');
 
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
