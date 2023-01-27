@@ -40,8 +40,9 @@
 
 <script src="./dist/js/vendor.js"></script>
 <script src="./dist/js/adminx.vanilla.js"></script>
+<script src="./dist/js/custom.js"></script>
 
-<link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
 
 
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -65,25 +66,8 @@
         });
     </script>
 
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function() {
-            'use strict';
 
-            window.addEventListener('load', function() {
-                var form = document.getElementById('needs-validation');
-                if(form !== null) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                }
-            }, false);
-        })();
-    </script>
+
 
 </body>
 </html>
