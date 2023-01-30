@@ -33,9 +33,8 @@
                                                 <span class="custom-control-indicator"></span>
                                             </label>
                                         </th>
-                                        <th scope="col">Discount</th>
-                                        <th scope="col">Price</th>
                                         <th scope="col">Code</th>
+                                        <th scope="col">Discount</th>
                                         <th scope="col">Quantity</th>
                                         <th scope="col">Products</th>
                                         <th scope="col">Actions</th>
@@ -50,17 +49,15 @@
                                                     <span class="custom-control-indicator"></span>
                                                 </label>
                                             </th>
+                                            <td>{{$sale->code}}</td>
                                             <td>{{$sale->discount}}</td>
-                                            <td>{{$sale->price}}</td>
-                                            <td>{{$sale->code}}</td>
-                                            <td>{{$sale->code}}</td>
                                             <td>{{$sale->quantity}}</td>
                                             <td>{{$sale->product}}</td>
                                             <td>
                                                 <button class="btn btn-sm btn-secondary">Show</button>
                                                 <button class="btn btn-sm btn-primary">Edit</button>
                                                 <button class="btn btn-sm btn-danger"
-                                                type="button" onclick='showModel("sales/{{$sale->id}}")'>&nbsp{{__('button.delete')}}
+                                                 type="button" onclick='showModel("sales/{{$sale->id}}")'>&nbsp{{__('button.delete')}}
                                                 </button></a>
                                             </td>
                                         </tr>

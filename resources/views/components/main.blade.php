@@ -40,7 +40,7 @@
 <script type="text/javascript" src="{{ asset('dist/js/vendor.js') }}"></script>
 <script type="text/javascript" src="{{ asset('dist/js/adminx.vanilla.js') }}"></script>
 <script type="text/javascript" src="{{ asset('dist/js/custom.js') }}"></script>
-<script type="text/javascript" src="{{ asset('dist/js/classic.js') }}"></script>
+<script type="text/javascript" src="{{ asset('dist/js/custom.js') }}"></script>
 
 {{--
 <script src="./dist/js/vendor.js"></script>

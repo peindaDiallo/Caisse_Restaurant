@@ -17,7 +17,7 @@ class SaleFactory extends Factory
     public function definition()
     {
         return [
-            'price' => fake()->randomDigit(),
+            'discount' => fake()->randomDigit(),
 
         ];
     }

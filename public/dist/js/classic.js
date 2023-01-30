@@ -72,7 +72,6 @@ function deleteData(id, item, limit) {
 
 }
 
-
 //Update modal
 function showEditmodal(id, item, limit) {
     itemkey = id;
