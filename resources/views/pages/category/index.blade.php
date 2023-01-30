@@ -44,7 +44,7 @@
                                         <td>{{$categorie->name}}</td>
                                         <td>
                                             <button class="btn btn-sm btn-secondary">Show</button>
-{{--                                            <a href="{{route('$categories.edit', encrypt( $categories->categories))}}">{{__('category.edit')}}>Edit</a>--}}
+                                            {{-- <a href="{{route('$categories.edit', encrypt( $categories->categories))}}">{{__('category.edit')}}>Edit</a>--}}
                                             <button class="button small red --jb-modal"
                                                     type="button"  onclick='showModel("categories/{{$categories->categories }}")'>Delete
                                             </button>&nbsp{{__('button.delete')}}</a>

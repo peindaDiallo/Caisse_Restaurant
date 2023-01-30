@@ -115,6 +115,7 @@ class CategoryController extends Controller
     public function selectlist(string $field)
     {
         $categories = Category::all();
+       // dd($categories);
         return view('pages.select.category', compact('field','categories'));
 
     }

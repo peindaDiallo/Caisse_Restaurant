@@ -31,7 +31,7 @@
                                             </th>
                                             <td>{{$categorie->name}}</td>
                                             <td class="d-flex justify-content-between gap-1">
-                                                <a href="#" onclick="selectPersoModal('{{ $field }}','{{ $categories }}',['id','name'], 'select{{ $field }}')"
+                                                <a href="#" onclick="selectPersoModal('{{ $field }}','{{ $categorie}}',['id','name'], 'select{{ $field }}')"
                                                    class="btn btn-sm btn-outline-primary">{{ __('button.select') }}</a>
                                             </td>
 

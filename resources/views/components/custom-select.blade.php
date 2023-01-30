@@ -7,6 +7,6 @@
     </select>
     <input type="hidden" name="{{$name}}" id="{{$name}}_val" value="{{$options[0]??''}}" />
     <span  class="btn btn-primary" id="b{{$name}}" onclick="openModal('{{ $route}}', '{{ $method }}')" >
-                <i data-feather="search"></i>
-              </span>
+        <i data-feather="search"></i>
+      </span>
 </div>

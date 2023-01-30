@@ -73,7 +73,6 @@
 
     <x-custom-modal id="selectcategories" size="modal-xl" name="{{ __('product.categories') }}"></x-custom-modal>
 
-
     <script>
         var loadFile = function (event){
             var output = document.getElementById('output');
