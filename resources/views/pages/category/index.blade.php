@@ -1,4 +1,3 @@
-
 <x-main>
 
     <div class="adminx-content">
@@ -8,10 +7,9 @@
                 <div class="pb-3">
                     <div class="col-12 d-flex justify-content-between">
                         <h1 class="card-title text-primary">{{ __('category.categ_list') }}</h1>
-                        <a href="{{ route('categories.create')}}" class="btn btn-success"><i class='bx bx-plus'></i>{{ __('sale.creare') }}</a>
+                        <a href="{{ route('categories.create')}}" class="btn btn-success"><i class='bx bx-plus'></i>{{ __('category.create') }}</a>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col">
                         <div class="card mb-grid">
@@ -44,10 +42,10 @@
                                         <td>{{$categorie->name}}</td>
                                         <td>
                                             <button class="btn btn-sm btn-secondary">Show</button>
-                                            {{-- <a href="{{route('$categories.edit', encrypt( $categories->categories))}}">{{__('category.edit')}}>Edit</a>--}}
-                                            <button class="button small red --jb-modal"
-                                                    type="button"  onclick='showModel("categories/{{$categories->categories }}")'>Delete
-                                            </button>&nbsp{{__('button.delete')}}</a>
+                                            <button class="btn btn-sm btn-primary">Edit</button>
+                                            <button class="btn btn-sm btn-danger"
+                                                    type="button" onclick='showModel("categories/{{$categorie->id}}")'>&nbsp{{__('button.delete')}}
+                                            </button>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -63,6 +61,5 @@
             </div>
         </div>
     </div>
-
 
 </x-main>

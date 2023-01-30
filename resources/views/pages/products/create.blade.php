@@ -21,10 +21,10 @@
                                      <option value="3">Sample value 3</option>
                                  </select>--}}
                                 <x-custom-select
-                                    label="{{ __('product.categories') }}"
-                                    name="categories"
-                                    route="{{ route('categories.selectlist','categories')}}"
-                                    method="selectcategories"
+                                    label="{{ __('product.category') }}"
+                                    name="category"
+                                    route="{{ route('categories.selectlist','category')}}"
+                                    method="selectcategory"
                                     :options="[]">
                                 </x-custom-select>
                             </div>
@@ -73,7 +73,7 @@
     </div>
     </div>
 
-    <x-custom-modal id="selectcategories" size="modal-xl" name="{{ __('product.categories') }}"></x-custom-modal>
+    <x-custom-modal id="selectcategory" size="modal-xl" name="{{ __('product.categories') }}"></x-custom-modal>
 
     <script>
         var loadFile = function (event) {

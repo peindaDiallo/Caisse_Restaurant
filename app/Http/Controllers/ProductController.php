@@ -114,7 +114,7 @@ class ProductController extends Controller
 
     }
 
-    public function selectlist(string $field): Factory|View|Application
+    public function selectlist(string $field)
     {
         $products = Product::all();
         return view('pages.select.product', compact('field','products'));
