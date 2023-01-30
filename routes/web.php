@@ -38,8 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/categories', CategoryController::class);
     Route::resource('/products', ProductController::class);
     Route::resource('/sales', SaleController::class);
-
-
+    Route::get('/categories-selected/{field}', [CategoryController::class, 'selectlist'])->name('categories.selectlist');
+    Route::get('/products-selected/{field}', [ProductController::class, 'selectlist'])->name('products.selectlist');
 
 
 });

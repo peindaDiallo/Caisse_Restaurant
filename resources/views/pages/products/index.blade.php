@@ -1,4 +1,3 @@
-
 <x-main>
 
     <div class="adminx-content">
@@ -12,7 +11,6 @@
                         <li class="breadcrumb-item active  aria-current="page">Regular Tables</li>
                     </ol>
                 </nav>
-
                 <div class="pb-3">
                     <h1>Data Tables</h1>
                 </div>
@@ -35,6 +33,7 @@
                                         </th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Description</th>
+                                        <th scope="col">Category</th>
                                         <th scope="col">Image</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Actions</th>
@@ -51,7 +50,12 @@
                                             </th>
                                             <td>{{$product->name}}</td>
                                             <td>{{$product->description}}</td>
-                                            <td>{{$product->image}}</td>
+                                            <td>{{$product->category}}</td>
+
+                                            <td>
+                                                <img src="{{ asset($product->image) }}" width='50' height='50'
+                                                     class="img img-responsive" alt=""/>
+                                            </td>
                                             <td>{{$product->price}}</td>
                                             <td>
                                                 <button class="btn btn-sm btn-secondary">Show</button>
@@ -69,6 +73,4 @@
             </div>
         </div>
     </div>
-
-
 </x-main>

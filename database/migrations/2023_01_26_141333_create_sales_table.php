@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('description')->nullable();
+            $table->string('discount')->nullable();
             $table->string('price')->nullable();
+            $table->integer('code')->nullable();
+            $table->integer('quantity')->nullable();
 
             $table->unsignedBigInteger('product')->nullable();
             $table->foreign('product')->references('id')->on('products')->onDelete('cascade');

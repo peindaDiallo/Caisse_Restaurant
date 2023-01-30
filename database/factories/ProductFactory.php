@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
+ * @extends Factory
  */
 class ProductFactory extends Factory
 {
@@ -20,6 +20,8 @@ class ProductFactory extends Factory
             'name' => fake()->name(),
             'description' => fake()->paragraph(),
             'price' => fake()->randomDigit(),
+            'image' => fake()->image(),
+
 
         ];
     }

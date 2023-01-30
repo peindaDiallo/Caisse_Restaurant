@@ -4,18 +4,10 @@
     <div class="adminx-content">
         <div class="adminx-main-content">
             <div class="container-fluid">
-                <!-- BreadCrumb -->
-                <nav aria-label="breadcrumb" role="navigation">
-                    <ol class="breadcrumb adminx-page-breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                        <li class="breadcrumb-item active  aria-current="page">Regular Tables</li>
-                    </ol>
-                </nav>
+
                 <div class="pb-3">
-                    <h1>Data Tables</h1>
                     <div class="col-12 d-flex justify-content-between">
-                        <h5 class="card-title text-primary">{{ __('category.categ_list') }}</h5>
+                        <h1 class="card-title text-primary">{{ __('category.categ_list') }}</h1>
                         <a href="{{ route('categories.create')}}" class="btn btn-success"><i class='bx bx-plus'></i>{{ __('sale.creare') }}</a>
                     </div>
                 </div>
@@ -52,14 +44,19 @@
                                         <td>{{$categorie->name}}</td>
                                         <td>
                                             <button class="btn btn-sm btn-secondary">Show</button>
-                                            <button class="btn btn-sm btn-primary">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
+{{--                                            <a href="{{route('$categories.edit', encrypt( $categories->categories))}}">{{__('category.edit')}}>Edit</a>--}}
+                                            <button class="button small red --jb-modal"
+                                                    type="button"  onclick='showModel("categories/{{$categories->categories }}")'>Delete
+                                            </button>&nbsp{{__('button.delete')}}</a>
                                         </td>
                                     </tr>
                                     @endforeach
                                     </tbody>
                                 </table>
                             </div>
+                            <x-delete-modal  message="{{ __('message.confirm_delete') }}"
+                                             cancel="{{ __('button.cancel') }}" confirm="{{ __('button.delete') }}" id="deleteConfirmationModel">
+                            </x-delete-modal>
                         </div>
                     </div>
                 </div>
