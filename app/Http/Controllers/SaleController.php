@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sale;
+use App\Models\Product;
 use App\Http\Requests\StoreSaleRequest;
 use App\Http\Requests\UpdateSaleRequest;
+use Illuminate\Support\Facades\Lang;
+
 
 class SaleController extends Controller
 {
@@ -27,7 +30,9 @@ class SaleController extends Controller
      */
     public function create()
     {
-        return view('pages.sale.create');
+        $products = Product::pluck('name','name')->all();
+        return view('pages.sale.create', compact('products'));
+
     }
 
     /**
@@ -38,7 +43,12 @@ class SaleController extends Controller
      */
     public function store(StoreSaleRequest $request)
     {
-        //
+
+        $data = $request->all();
+        //dd($data);
+        Sale::create($data);
+        return redirect()->route('sale.index')->with('toast_success',Lang::get('message.created'));
+
     }
 
     /**
@@ -49,7 +59,7 @@ class SaleController extends Controller
      */
     public function show(Sale $sale)
     {
-        //
+
     }
 
     /**
@@ -60,7 +70,8 @@ class SaleController extends Controller
      */
     public function edit(Sale $sale)
     {
-        //
+        $sale =Sale::find(decrypt($id));
+        return view('pages.sale.edit', compact('sale'));
     }
 
     /**
@@ -72,7 +83,14 @@ class SaleController extends Controller
      */
     public function update(UpdateSaleRequest $request, Sale $sale)
     {
-        //
+        $this->validate($request, [
+            'name'=> 'required',
+        ]);
+        $sales =Sale::find(decrypt($id));
+        $sales->update( $request->all());
+
+        return redirect()->route('sales.index')->with('toast_success',Lang::get('message.created'));
+
     }
 
     /**
@@ -83,6 +101,10 @@ class SaleController extends Controller
      */
     public function destroy(Sale $sale)
     {
-        //
+
+        $sale->delete();
+
+        return redirect()->route('sales.index')->with('toast_success', Lang::get('message.created'));
+
     }
 }

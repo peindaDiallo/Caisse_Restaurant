@@ -11,9 +11,6 @@ use Illuminate\Contracts\Foundation\Application;
 use App\Http\Controllers\redirect;
 
 
-
-
-
 class CategoryController extends Controller
 {
     /**
@@ -109,7 +106,9 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category ->delete();
+        return redirect()->route('categories.index')->with('toast_success',Lang::get('message.created'));
+
     }
 
     public function selectlist(string $field)

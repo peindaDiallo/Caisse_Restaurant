@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+
             $table->string('discount')->nullable();
             $table->string('price')->nullable();
             $table->integer('code')->nullable();

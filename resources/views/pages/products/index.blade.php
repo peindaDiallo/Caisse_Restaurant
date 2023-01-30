@@ -20,7 +20,7 @@
                             <div class="table-responsive-md">
                                 <div class="col-12 d-flex justify-content-between">
                                     <h5 class="card-title text-primary">{{ __('catego.catego_list') }}</h5>
-                                    <a href="{{ route('products.create')}}" class="btn btn-success"><i class='bx bx-plus'></i>{{ __('catego.creare') }}</a>
+                                    <a href="{{ route('products.create')}}" class="btn btn-success"><i class='bx bx-plus'></i>{{ __('product.create') }}</a>
                                 </div>
                                 <table class="table table-actions table-striped table-hover mb-0" data-table>
                                     <thead>
@@ -60,13 +60,18 @@
                                             <td>
                                                 <button class="btn btn-sm btn-secondary">Show</button>
                                                 <button class="btn btn-sm btn-primary">Edit</button>
-                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                                <button class="btn btn-sm btn-danger"
+                                                    type="button" onclick='showModel("products/{{$product->id}}")'>&nbsp{{__('button.delete')}}
+                                            </button></a>
                                             </td>
                                         </tr>
                                     @endforeach
                                     </tbody>
                                 </table>
                             </div>
+                            <x-delete-modal  message="{{ __('message.confirm_delete') }}"
+                            cancel="{{ __('button.cancel') }}" confirm="{{ __('button.delete') }}" id="deleteConfirmationModel">
+                            </x-delete-modal>
                         </div>
                     </div>
                 </div>
